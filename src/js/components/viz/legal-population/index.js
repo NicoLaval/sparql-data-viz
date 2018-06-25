@@ -9,9 +9,13 @@ export default ({ data }) => {
 	}));
 	return (
 		<div>
-			<DataTable title="Population légales d'Île de France" data={data} />
 			<div className="mui-row loading-row">
-				<div className="mui-col-md-10 mui-col-md-offset-1">
+				<div className="mui-col-md-12">
+					<DataTable title="Population légales d'Île de France" data={data} />
+				</div>
+			</div>
+			<div className="mui-row loading-row">
+				<div className="mui-col-md-12">
 					<Hints data={xyData} xName="Date" yName="Population" />
 				</div>
 			</div>

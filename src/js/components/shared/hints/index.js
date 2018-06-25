@@ -11,7 +11,7 @@ import {
 } from 'react-vis';
 
 const { TOP, RIGHT } = Hint.ALIGN;
-const CHART_MARGINS = { left: 100, right: 10, top: 10, bottom: 100 };
+const CHART_MARGINS = { left: 100, right: 100, top: 10, bottom: 100 };
 
 const DATA_HINT_ALIGN = {
 	horizontal: RIGHT,
