@@ -10,9 +10,8 @@ stories.addDecorator(globalDecorator).addDecorator(withKnobs);
 const data = Array(99)
 	.fill('')
 	.map((a, i) => ({
-		name: `Lign ${i + 1}`,
 		firstcol: `1 - ${i + 1}`,
-		secondcol: `${i + 1} - 2`,
+		secondcol: `2 - ${i + 1}`,
 	}));
 
 stories.add('Default', () => (

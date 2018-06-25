@@ -34,7 +34,8 @@ class Table extends Component {
 			};
 		});
 		const filteredData = data.filter(d =>
-			d.name
+			Object.values(d)
+				.join('')
 				.toLowerCase()
 				.replace(/\s/g, '')
 				.includes(filter.toLowerCase().replace(/\s/g, ''))
