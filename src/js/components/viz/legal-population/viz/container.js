@@ -1,32 +1,30 @@
 import React from 'react';
 import { sparqlConnect } from 'sparql-connect';
-import LegalPopulation from './';
+import Viz from './viz';
 import Spinner from 'js/components/shared/spinner';
 
-const queryBuilder = () => `
+const queryBuilder = area => `
   PREFIX idemo:<http://rdf.insee.fr/def/demo#>
   PREFIX igeo:<http://rdf.insee.fr/def/geo#>
   PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
-  SELECT ?name ?population ?date
+  SELECT ?date ?population ?label
   WHERE {
-    ?district igeo:codeRegion "11"^^xsd:token ; igeo:nom ?name ; idemo:population ?popURI .
+    <${area}> igeo:nom ?label ; idemo:population ?popURI .
     ?popURI idemo:populationTotale ?population ; idemo:date ?date .
-    FILTER(lang(?name) = 'fr')
   }
 `;
 
 const connector = sparqlConnect(queryBuilder, {
-	queryName: 'populationDistrict',
+	queryName: 'areaPopulation',
+	params: ['area'],
 });
 
-function LegalPopulationContainer({ populationDistrict }) {
-	return (
-		<div>
-			<LegalPopulation data={populationDistrict} />
-		</div>
-	);
-}
+const VizContainer = ({ areaPopulation }) => (
+	<div>
+		<Viz data={areaPopulation} />
+	</div>
+);
 
-export default connector(LegalPopulationContainer, {
+export default connector(VizContainer, {
 	loading: () => <Spinner text={'Chargement en cours'} />,
 });

@@ -5,7 +5,7 @@ export const items = [
 	{ route: '/', title: 'Sommaire', body: <C.Home /> },
 	{ route: '', title: 'Démographie', type: 'SubHeader' },
 	{
-		route: '/legal-pop-idf',
+		route: '/legal-pop',
 		title: 'Populations légales',
 		body: <C.Component />,
 	},
