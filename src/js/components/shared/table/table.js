@@ -25,6 +25,7 @@ class Table extends Component {
 	render() {
 		const { data, title } = this.props;
 		const { filter, order, page, rowSize } = this.state;
+
 		const columns = Object.keys(data[0]).map(e => {
 			return {
 				key: e.toLowerCase(),
