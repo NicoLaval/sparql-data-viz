@@ -52,7 +52,7 @@ export default class Hints extends React.Component {
 								value.x
 							).toLocaleDateString()}`}
 							<br />
-							{`${xName ? `${yName} :` : ''} ${value.y}`}
+							{`${yName ? `${yName} :` : ''} ${value.y}`}
 						</div>
 					</Hint>
 				) : null}
