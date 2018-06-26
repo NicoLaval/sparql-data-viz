@@ -7,6 +7,6 @@ export const items = [
 	{
 		route: '/legal-pop',
 		title: 'Populations légales',
-		body: <C.Component />,
+		body: <C.LegalPop />,
 	},
 ];
