@@ -33,7 +33,7 @@ export default class Bubble extends React.Component {
 
 	render() {
 		const { value } = this.state;
-		const { data, xName, yName, sizeName } = this.props;
+		const { data, label, xName, yName, sizeName } = this.props;
 		return (
 			<XYPlot width={1200} height={400} margin={CHART_MARGINS}>
 				<VerticalGridLines />
@@ -48,6 +48,8 @@ export default class Bubble extends React.Component {
 				{value ? (
 					<Hint value={value} align={DATA_HINT_ALIGN}>
 						<div className="rv-hint__content">
+							{`${label ? `${label} :` : ''} ${value.label}`}
+							<br />
 							{`${xName ? `${xName} :` : ''} ${value.x}`}
 							<br />
 							{`${yName ? `${yName} :` : ''} ${value.y}`}

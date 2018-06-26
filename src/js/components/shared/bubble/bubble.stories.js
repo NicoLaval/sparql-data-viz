@@ -9,10 +9,11 @@ stories.addDecorator(globalDecorator);
 
 const xyData = Array(100)
 	.fill('')
-	.map(a => ({
+	.map((a, i) => ({
 		x: (Math.random() * 10).toPrecision(2),
 		y: (Math.random() * 10).toPrecision(2),
 		size: (Math.random() * 10).toPrecision(2),
+		label: `Area ${i + 1}`,
 	}));
 
 stories.add('Default', () => (
@@ -21,5 +22,6 @@ stories.add('Default', () => (
 		xName="Taux ..."
 		yName="Taux ..."
 		sizeName="Population"
+		label="Area"
 	/>
 ));
