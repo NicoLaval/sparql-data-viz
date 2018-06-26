@@ -10,6 +10,7 @@ import Menu from 'js/components/menu';
 import PagesRoutes from './routes';
 import { getReducer, setQueryURL } from 'sparql-connect';
 import config from 'config';
+import { items } from 'js/components/router/component-list';
 
 setQueryURL(config.queryURL);
 const store = configureStore(getReducer());
@@ -19,7 +20,7 @@ export default () => (
 		<Provider store={store}>
 			<Router>
 				<div>
-					<Menu />
+					<Menu items={items} />
 					<Switch>
 						<PagesRoutes />
 						/>
