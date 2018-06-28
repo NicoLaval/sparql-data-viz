@@ -34,13 +34,14 @@
 		"build-test": "yarn test --coverage",
 		"eject": "react-scripts eject",
 		"start-storybook": "cross-env NODE_PATH=src/ start-storybook -p 9999",
-		"build-storybook":
-			"cross-env NODE_PATH=src/ build-storybook -o built-storybook/storybook"
+		"build-storybook": "cross-env NODE_PATH=src/ build-storybook -o built-storybook/storybook"
 	},
 	"devDependencies": {
 		"@storybook/addon-knobs": "^3.4.8",
 		"@storybook/react": "^3.4.8",
 		"cross-env": "^5.1.4",
+		"enzyme": "^3.3.0",
+		"enzyme-adapter-react-16": "^1.1.1",
 		"prettier": "^1.13.5"
 	},
 	"prettier": {
