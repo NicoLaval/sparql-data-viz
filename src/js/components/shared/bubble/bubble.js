@@ -38,11 +38,7 @@ export default class Bubble extends React.Component {
 			<XYPlot width={1200} height={400} margin={CHART_MARGINS}>
 				<VerticalGridLines />
 				<HorizontalGridLines />
-				<XAxis
-					tickFormat={d => d}
-					tickLabelAngle={-90}
-					tickValues={data.map(d => d.x)}
-				/>
+				<XAxis tickFormat={d => d} tickLabelAngle={-90} />
 				<YAxis />
 				<MarkSeries onNearestX={this._rememberValue} data={data} />
 				{value ? (
