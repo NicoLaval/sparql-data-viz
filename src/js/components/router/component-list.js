@@ -9,4 +9,9 @@ export const items = [
 		title: 'Populations légales',
 		body: <C.LegalPop />,
 	},
+	{
+		route: '/pop-evolution',
+		title: 'Evolutions des populations',
+		body: <C.PopEvolution />,
+	},
 ];
